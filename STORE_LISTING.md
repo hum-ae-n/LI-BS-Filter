@@ -36,6 +36,7 @@ WHAT IT HIDES (each is an independent toggle)
 • Recommendations — "People you may know", "Add to your feed", follow
   suggestions (opt-in)
 • News & trending — "Suggested News for You" and trending cards (opt-in)
+• Job recommendations — "Jobs recommended for you" panels (on by default)
 
 ON-PAGE CONTROLS
 A small panel sits at the bottom-left of your feed. Flip any filter, watch the

@@ -13,7 +13,8 @@ var CATEGORIES = [
   { id: 'promoted',  key: 'filterPromoted',  defaultOn: true },
   { id: 'suggested', key: 'filterSuggested', defaultOn: true },
   { id: 'recommend', key: 'filterRecommend', defaultOn: false },
-  { id: 'news',      key: 'filterNews',      defaultOn: false }
+  { id: 'news',      key: 'filterNews',      defaultOn: false },
+  { id: 'jobs',      key: 'filterJobs',      defaultOn: true }
 ];
 
 function defaults() {

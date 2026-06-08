@@ -19,7 +19,8 @@ var DEFAULT_PREFS = {
   filterPromoted: true,
   filterSuggested: true,
   filterRecommend: false,
-  filterNews: false
+  filterNews: false,
+  filterJobs: true
 };
 
 // Live per-category session counts, reported by the content script.

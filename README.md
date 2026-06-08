@@ -157,6 +157,8 @@ Chinese. (Adding more is easy — see *Updating the label map* below.)
     suggestions (off by default — opt in)
   - **News & trending** — "Suggested News for You" and trending cards (off by
     default — opt in)
+  - **Job recommendations** — "Jobs recommended for you" and similar job panels
+    (on by default)
 - **On-page control panel** — a small floating widget at the bottom-left of your
   feed lets you flip any filter and **peek at hidden posts** ("👁 Show hidden")
   without opening the toolbar menu
