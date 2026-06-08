@@ -1,5 +1,5 @@
 /*
- * LinkedIn Feed Filter — service worker (background)
+ * LinkedOut — service worker (background)
  *
  * Event-driven only. Responsibilities (PRD §6.5):
  *  - maintain the in-memory session count reported by the content script

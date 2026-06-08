@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "LinkedIn Feed Filter",
+  "name": "LinkedOut - Hide LinkedIn Promoted & Slop",
   "version": "1.0.0",
-  "description": "Filter Promoted and Suggested posts from your LinkedIn feed.",
+  "description": "Hide Promoted, Suggested, AI slop & 'People you may know' from your LinkedIn feed. On-page toggles. Zero tracking, no ads.",
   "permissions": ["storage"],
   "host_permissions": ["https://www.linkedin.com/*"],
   "action": {
