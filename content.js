@@ -143,22 +143,30 @@
 
   function classify(text) {
     if (!text) return null;
-    var t = text.trim().toLowerCase();
+    // Trim whitespace plus any bullet / pipe / dash separators LinkedIn
+    // sometimes places around the label (e.g. "• Promoted", "Promoted ·").
+    var t = text.replace(/^[\s•·|–—\-]+/, '')
+                .replace(/[\s•·|–—\-]+$/, '')
+                .toLowerCase();
     if (!t || t.length > MAX_LABEL_LEN) return null;
     return LABEL_INDEX[t] || null;
   }
 
-  // Is this element the top-level container for a feed card? These attribute /
-  // class hints are only used to *stop* the upward walk — detection itself is
-  // text-based, so if LinkedIn renames them we degrade to the fallback below.
-  function isFeedItem(el) {
-    if (!el || el.nodeType !== 1) return false;
-    if (el.hasAttribute('data-urn')) return true;
-    if (el.hasAttribute('data-id')) return true;
-    var c = el.className;
-    if (typeof c === 'string' && c.indexOf('feed-shared-update-v2') !== -1) return true;
-    return false;
-  }
+  // Selectors that (today) identify a whole feed-card wrapper. Detection itself
+  // is text-based; these only choose which ancestor to hide. The list is broad
+  // on purpose so we keep working as LinkedIn renames things.
+  var CARD_SELECTOR = [
+    'div.feed-shared-update-v2',
+    '[data-urn^="urn:li:activity"]',
+    '[data-id^="urn:li:activity"]',
+    '[data-urn^="urn:li:aggregate"]',
+    'li.scaffold-finite-scroll__list-item',
+    'div.fie-impression-container',
+    'div.occludable-update'
+  ].join(', ');
+
+  var LIST_SELECTOR =
+    '.scaffold-finite-scroll__content, .scaffold-finite-scroll, main [role="list"]';
 
   function getFeedRoot() {
     return document.querySelector('.scaffold-finite-scroll__content') ||
@@ -166,29 +174,33 @@
            document.body;
   }
 
-  function hasFeed() {
-    return !!document.querySelector('.scaffold-finite-scroll__content');
+  // The control panel should show on the feed itself, not on messaging/profile/
+  // settings pages. Match on the URL so it does not depend on feed class names.
+  function onFeedPage() {
+    var p = location.pathname;
+    return p === '/' || p === '/feed/' || p.indexOf('/feed') === 0;
   }
 
-  // Walk up from a matched label span to the element that represents the whole
-  // card. Prefer a recognized feed-item ancestor; otherwise fall back to the
-  // direct child of the feed scroll container.
+  // From a matched label, find the element representing the whole post so we can
+  // hide it cleanly. Strategy: take the nearest known card wrapper, then climb to
+  // the outermost slot sitting directly in the feed list (so we remove the whole
+  // card, not an inner fragment). Falls back gracefully if the list container has
+  // been renamed.
   function findCard(start) {
-    var el = start;
-    var i;
-    for (i = 0; i < 12 && el && el !== document.body; i++) {
-      if (isFeedItem(el)) return el;
-      el = el.parentElement;
-    }
-    el = start;
-    for (i = 0; i < 14 && el && el.parentElement; i++) {
-      var p = el.parentElement;
-      if (p.classList && p.classList.contains('scaffold-finite-scroll__content')) {
-        return el;
+    if (!start || !start.closest) return null;
+
+    var card = start.closest(CARD_SELECTOR);
+    var list = (card || start).closest(LIST_SELECTOR);
+
+    if (list) {
+      var el = card || start;
+      while (el && el.parentElement && el.parentElement !== list) {
+        el = el.parentElement;
       }
-      el = p;
+      if (el && el.parentElement === list) return el;
     }
-    return null;
+
+    return card; // best effort if the list container could not be located
   }
 
   function paintCard(card) {
@@ -433,8 +445,8 @@
 
     return {
       ensure: function () {
-        if (!built && hasFeed()) build();
-        if (built) root.style.display = hasFeed() ? 'block' : 'none';
+        if (!built && onFeedPage()) build();
+        if (built) root.style.display = onFeedPage() ? 'block' : 'none';
       },
       renderCounts: function () {
         if (!built) return;
