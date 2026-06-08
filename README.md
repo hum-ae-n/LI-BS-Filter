@@ -48,6 +48,10 @@ wanted to see. If that ever happens, just flip the switch back off.
 
 ## Install it in 5 minutes (no coding required)
 
+> 🛍️ **Chrome Web Store listing: coming soon.** Once it's live you'll get a
+> one-click **"Add to Chrome"** button with automatic updates. Until then,
+> install from source using the steps below — it works exactly the same.
+
 You do **not** need to know how to code, and you don't need any developer tools.
 
 ### Step 1 — Download the files

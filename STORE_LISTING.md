@@ -66,7 +66,7 @@ Your feed, the way you actually wanted it.
 
 ## Permission justifications (for the review form)
 
-- **storage** — Persist the user's four filter on/off preferences so they survive
+- **storage** — Persist the user's filter on/off preferences so they survive
   restarts and sync across the user's own Chrome instances. No other data is
   stored.
 - **Host permission `https://www.linkedin.com/*`** — The content script must run
@@ -76,8 +76,9 @@ Your feed, the way you actually wanted it.
 ## Single purpose (required statement)
 
 ```
-LinkedOut has a single purpose: to hide unwanted promoted, suggested, and
-recommendation posts from the user's LinkedIn home feed.
+LinkedOut has a single purpose: to hide unwanted promoted, suggested,
+recommendation, news, and job-recommendation posts from the user's LinkedIn
+home feed.
 ```
 
 ## Data usage disclosures (Privacy practices tab)
@@ -87,8 +88,21 @@ recommendation posts from the user's LinkedIn home feed.
   determine creditworthiness / lending? **No.**
 - Privacy policy URL: link to `PRIVACY.md` (or a hosted copy).
 
-## Assets still needed before submission
+## Assets
 
-- [ ] Screenshots: 1280×800 or 640×400 (at least one; show the on-page panel)
-- [ ] Optional promo tile: 440×280
-- [ ] Demo video (optional but recommended) — YouTube link
+Source art: **`assets/banner.png`** (1297×816). Use it as the basis for the
+store images below — only light cropping/resizing is needed.
+
+- [x] Marquee / hero art — `assets/banner.png` already works as-is
+- [ ] **Primary screenshot** (1280×800 or 640×400) — resize `assets/banner.png`
+      to 1280×800, OR take a real screenshot showing the on-page panel filtering
+      a live feed (recommended — reviewers and users prefer a real screenshot)
+- [ ] **Small promo tile** (440×280) — crop the "LinkedOut" wordmark + tagline
+      from `assets/banner.png`
+- [ ] **Marquee promo tile** (1400×560, optional) — letterbox `assets/banner.png`
+- [ ] Demo video (optional) — YouTube link
+
+## Status
+
+**Chrome Web Store: coming soon.** Until published, install from source
+(see the repo README → "Install in 5 minutes").
