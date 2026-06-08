@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="popup.css" />
+  <title>LinkedIn Feed Filter</title>
+</head>
+<body>
+  <header class="lff-header">
+    <h1 class="lff-title">LinkedIn Feed Filter</h1>
+    <span class="lff-version" id="header-version"></span>
+  </header>
+
+  <main class="lff-main">
+    <div class="lff-row">
+      <span class="lff-text">
+        <label for="toggle-promoted">Hide Promoted</label>
+        <span class="lff-count" id="count-promoted">0</span>
+      </span>
+      <label class="lff-switch" aria-label="Hide Promoted posts">
+        <input type="checkbox" id="toggle-promoted" />
+        <span class="lff-slider"></span>
+      </label>
+    </div>
+
+    <div class="lff-row">
+      <span class="lff-text">
+        <label for="toggle-suggested">Hide Suggested</label>
+        <span class="lff-count" id="count-suggested">0</span>
+      </span>
+      <label class="lff-switch" aria-label="Hide Suggested posts">
+        <input type="checkbox" id="toggle-suggested" />
+        <span class="lff-slider"></span>
+      </label>
+    </div>
+
+    <div class="lff-row">
+      <span class="lff-text">
+        <label for="toggle-recommend">Hide Recommendations</label>
+        <span class="lff-count" id="count-recommend">0</span>
+      </span>
+      <label class="lff-switch" aria-label="Hide recommendation cards">
+        <input type="checkbox" id="toggle-recommend" />
+        <span class="lff-slider"></span>
+      </label>
+    </div>
+
+    <div class="lff-row">
+      <span class="lff-text">
+        <label for="toggle-news">Hide News &amp; trending</label>
+        <span class="lff-count" id="count-news">0</span>
+      </span>
+      <label class="lff-switch" aria-label="Hide news and trending cards">
+        <input type="checkbox" id="toggle-news" />
+        <span class="lff-slider"></span>
+      </label>
+    </div>
+
+    <p class="lff-stats">
+      <strong id="count-total">0</strong> posts filtered this session
+    </p>
+    <p class="lff-hint">Tip: use the on-page panel (bottom-left of your feed) to
+      toggle filters or peek at hidden posts without opening this menu.</p>
+  </main>
+
+  <footer class="lff-footer">
+    <span id="footer-version"></span>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+:root {
+  --lff-blue: #0a66c2;
+  --lff-grey: #6b7280;
+  --lff-bg: #ffffff;
+  --lff-text: #1f2328;
+  --lff-muted: #6b7280;
+  --lff-border: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 280px;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  font-size: 14px;
+  color: var(--lff-text);
+  background: var(--lff-bg);
+}
+
+.lff-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--lff-border);
+}
+
+.lff-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--lff-blue);
+}
+
+.lff-version {
+  font-size: 11px;
+  color: var(--lff-muted);
+}
+
+.lff-main {
+  padding: 8px 16px 4px;
+}
+
+.lff-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.lff-text {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+}
+
+.lff-text label {
+  cursor: pointer;
+}
+
+.lff-count {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--lff-muted);
+}
+
+/* Toggle switch — pure CSS, animated via transition (no JS animation lib). */
+.lff-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+  flex: 0 0 auto;
+}
+
+.lff-switch input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.lff-slider {
+  position: absolute;
+  inset: 0;
+  background: #cbd5e1;
+  border-radius: 22px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.lff-slider::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 2px;
+  top: 2px;
+  background: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.lff-switch input:checked + .lff-slider {
+  background: var(--lff-blue);
+}
+
+.lff-switch input:checked + .lff-slider::before {
+  transform: translateX(18px);
+}
+
+.lff-switch input:focus-visible + .lff-slider {
+  outline: 2px solid var(--lff-blue);
+  outline-offset: 2px;
+}
+
+.lff-stats {
+  margin: 8px 0 6px;
+  padding: 10px 12px;
+  background: #f3f4f6;
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--lff-text);
+  text-align: center;
+}
+
+.lff-stats strong {
+  color: var(--lff-blue);
+}
+
+.lff-hint {
+  margin: 0 0 4px;
+  padding: 0 2px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--lff-muted);
+}
+
+.lff-footer {
+  padding: 8px 16px 12px;
+  font-size: 11px;
+  color: var(--lff-muted);
+  text-align: right;
+}
