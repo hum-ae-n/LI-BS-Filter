@@ -59,6 +59,12 @@ LinkedIn's frequent DOM/class-name changes.
 
 See [PRIVACY.md](PRIVACY.md) for the full privacy policy.
 
+Run the automated security/compliance audit (PRD §8.2) any time:
+
+```bash
+bash tools/audit.sh
+```
+
 ## Regenerating icons
 
 The icons are committed, but you can rebuild them with the standard library
