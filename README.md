@@ -1,4 +1,7 @@
-# LinkedIn Feed Filter
+# LinkedOut
+
+> **LinkedOut** — hide Promoted, Suggested, AI slop & "People you may know" from
+> your LinkedIn feed. (Formerly "LinkedIn Feed Filter".)
 
 ```text
     __    _       __            ______        __
@@ -100,7 +103,7 @@ You do **not** need to know how to code, and you don't need any developer tools.
 1. Click the **Load unpacked** button (top-left).
 2. Select the folder you unzipped in Step 1 (the one containing
    `manifest.json`).
-3. Done — "LinkedIn Feed Filter" now appears in your list, and a small icon
+3. Done — "LinkedOut" now appears in your list, and a small icon
    appears in your Chrome toolbar.
 
 ### Step 4 — Use it
@@ -113,7 +116,7 @@ You do **not** need to know how to code, and you don't need any developer tools.
    controls.)
 
 > **Tip:** if you don't see the icon, click the puzzle-piece 🧩 icon in Chrome's
-> toolbar and pin "LinkedIn Feed Filter" so it's always visible.
+> toolbar and pin "LinkedOut" so it's always visible.
 
 ### Keeping it updated
 

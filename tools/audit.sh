@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Security & compliance audit for LinkedIn Feed Filter.
+# Security & compliance audit for LinkedOut.
 # Codifies the PRD §8.2 Security Review Workflow automated checks so the
 # review step is reproducible in one command. Exits non-zero on any finding.
 #

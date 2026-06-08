@@ -1,5 +1,5 @@
 /*
- * LinkedIn Feed Filter — content script
+ * LinkedOut — content script
  *
  * Detects unwanted feed cards by their visible label text and hides them with
  * display:none. Designed to survive LinkedIn DOM churn: it matches on localized
@@ -340,7 +340,7 @@
 
       root = document.createElement('div');
       root.id = 'lff-panel';
-      root.setAttribute('aria-label', 'LinkedIn Feed Filter controls');
+      root.setAttribute('aria-label', 'LinkedOut feed filter controls');
       css(root, {
         position: 'fixed', left: '20px', bottom: '20px', zIndex: '2147483000',
         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
@@ -350,7 +350,7 @@
       // Collapsed badge button.
       badge = document.createElement('button');
       badge.type = 'button';
-      badge.setAttribute('aria-label', 'Open LinkedIn Feed Filter');
+      badge.setAttribute('aria-label', 'Open LinkedOut');
       css(badge, {
         display: 'none', alignItems: 'center', gap: '6px', border: 'none',
         cursor: 'pointer', color: '#fff', background: BLUE, borderRadius: '20px',
@@ -375,7 +375,7 @@
       var head = document.createElement('div');
       css(head, { display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' });
       var title = document.createElement('span');
-      title.textContent = '🛡 Feed Filter';
+      title.textContent = '🛡 LinkedOut';
       css(title, { fontWeight: '700', color: BLUE });
       var min = document.createElement('button');
       min.type = 'button';

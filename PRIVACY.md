@@ -1,11 +1,12 @@
-# Privacy Policy — LinkedIn Feed Filter
+# Privacy Policy — LinkedOut
 
 This extension does not collect, store, or transmit any user data.
 
 Filter preferences (on/off toggles) are stored locally in your browser's sync
 storage so they persist across sessions and devices. The extension reads the
-visible text of LinkedIn feed cards only to detect the "Promoted" and
-"Suggested" labels; this text is never stored, transmitted, or logged.
+visible text of LinkedIn feed cards only to detect filter labels such as
+"Promoted", "Suggested", "People you may know" and similar; this text is never
+stored, transmitted, or logged.
 
 - No analytics
 - No telemetry

@@ -1,5 +1,5 @@
 /*
- * LinkedIn Feed Filter — popup UI logic
+ * LinkedOut — popup UI logic
  *
  * Reads/writes preferences via chrome.storage.sync and reads live session
  * counts from the service worker. Toggling a filter only writes to storage;
