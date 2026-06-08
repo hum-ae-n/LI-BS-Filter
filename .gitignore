@@ -1,0 +1,6 @@
+# Build artifacts produced by tools/package.sh
+dist/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
