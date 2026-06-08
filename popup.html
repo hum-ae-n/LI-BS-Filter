@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="popup.css" />
+  <title>LinkedIn Feed Filter</title>
+</head>
+<body>
+  <header class="lff-header">
+    <h1 class="lff-title">LinkedIn Feed Filter</h1>
+    <span class="lff-version" id="header-version"></span>
+  </header>
+
+  <main class="lff-main">
+    <div class="lff-row">
+      <label class="lff-text" for="toggle-promoted">Hide Promoted</label>
+      <label class="lff-switch" aria-label="Hide Promoted posts">
+        <input type="checkbox" id="toggle-promoted" />
+        <span class="lff-slider"></span>
+      </label>
+    </div>
+
+    <div class="lff-row">
+      <label class="lff-text" for="toggle-suggested">Hide Suggested</label>
+      <label class="lff-switch" aria-label="Hide Suggested posts">
+        <input type="checkbox" id="toggle-suggested" />
+        <span class="lff-slider"></span>
+      </label>
+    </div>
+
+    <p class="lff-stats">
+      <strong id="count-promoted">0</strong> Promoted /
+      <strong id="count-suggested">0</strong> Suggested filtered
+    </p>
+  </main>
+
+  <footer class="lff-footer">
+    <span id="footer-version"></span>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
