@@ -189,20 +189,6 @@ Run the automated security/compliance audit (PRD §8.2) any time:
 bash tools/audit.sh
 ```
 
-## Packaging for the Chrome Web Store
-
-Build an upload-ready zip (runs the audit first as a gate, bundles only the
-runtime files, and produces a reproducible archive):
-
-```bash
-bash tools/package.sh
-# -> dist/linkedout-v<version>.zip
-```
-
-Upload that zip in the Chrome Web Store Developer Dashboard. See
-[STORE_LISTING.md](STORE_LISTING.md) for ready-to-paste listing copy and the
-permission/data-usage disclosures.
-
 ## Regenerating icons
 
 The icons are committed, but you can rebuild them with the standard library
